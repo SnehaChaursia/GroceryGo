@@ -1,71 +1,81 @@
+/* Base loader container */
 .loader-container {
   font-size: 2rem;
-  padding: 1.2rem;
+  padding: 5rem !important; /* overriding original smaller padding */
   width: 100%;
+  height: 100vh;
   position: relative;
   background: rgba(102, 100, 100, 0.715);
-  height: 100vh;
+  border-radius: 0.5rem;
+  box-shadow: rgba(17, 17, 26, 0.1) 0 1px 0;
   display: flex;
-  place-items: center;
+  align-items: center; /* center vertically */
+  justify-content: center; /* center horizontally */
+  text-align: center;
+  flex-direction: column; /* stack child elements vertically */
 }
 
+/* Pop-cart loader container (smaller popup style) */
 .loader-container-pop-cart {
   background-color: white;
   width: 40rem;
-  padding: 3rem 0rem;
-  text-align: center;
-  height: fit-content;
-  padding-bottom: 2rem;
+  padding: 3rem 0 2rem; /* combined top and bottom padding */
   margin: auto;
   border-radius: 0.5rem;
-  box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px;
+  box-shadow: rgba(17, 17, 26, 0.1) 0 1px 0;
+  text-align: center;
+  height: fit-content;
 }
 
-.loader-container {
-  padding: 5rem !important;
-  border-radius: 0.5rem;
-  box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px;
-}
+/* Title inside loader container */
 .loader-container div h1 {
   color: var(--black);
   font-size: 2.5rem;
   margin-top: 1rem;
+  margin-bottom: 0; /* remove bottom margin for tighter spacing */
 }
 
+/* Button inside loader */
 .loader-container div button {
-  color: var(--black);
+  background-color: var(--green);
+  color: white;
   padding: 1rem;
   margin-top: 1.8rem;
   font-size: 2rem;
-  background-color: var(--green);
-  color: white;
   border-radius: 0.5rem;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
+
 .loader-container div button:hover {
   background-color: tomato;
 }
 
+/* Loader animation circle */
 .loader-container-animation {
-  background-color: none;
   width: 6rem;
   padding: 0.8rem 1.5rem;
   margin: auto;
   border: 1px solid green;
-  border-radius: 100%;
+  border-radius: 50%;
   display: flex;
   justify-content: center;
-  place-items: center;
+  align-items: center;
   animation: loader 7s infinite;
   transition: all 2s;
+  background-color: transparent; /* clearer than none */
 }
 
+/* Loader rotation animation */
 @keyframes loader {
   90% {
     transform: rotate(360deg);
-    border: 1px solid orange;
+    border-color: orange; /* shorthand for border */
   }
 }
 
+/* Animated loader emoji */
 .loader-loading-text::before {
   content: "🥦";
   font-size: 3rem;
@@ -73,42 +83,47 @@
   transition: all 2s;
 }
 
+/* Emoji spin and change */
 @keyframes spin {
-  30% {
-    content: "🥕";
-  }
-  35% {
-    content: "🍊";
-  }
-  40% {
-    content: "🌶️";
-  }
-  45% {
-    content: "🍍";
-  }
-  50% {
-    content: "🍏";
-  }
-  55% {
-    content: "🍐";
-  }
-  60% {
-    content: "🍉";
-  }
-  65% {
-    content: "🍓";
-  }
-  70% {
-    content: "🍒";
-  }
-  75% {
-    content: "🍎";
-  }
+  0%, 100% { content: "🥦"; }
+  30% { content: "🥕"; }
+  35% { content: "🍊"; }
+  40% { content: "🌶️"; }
+  45% { content: "🍍"; }
+  50% { content: "🍏"; }
+  55% { content: "🍐"; }
+  60% { content: "🍉"; }
+  65% { content: "🍓"; }
+  70% { content: "🍒"; }
+  75% { content: "🍎"; }
 }
 
+/* Responsive text size for smaller screens */
 @media (max-width: 450px) {
   .loader-container div h1 {
-    color: var(--black);
-    font-size: 2.5rem;
+    font-size: 2rem; /* slightly smaller for small devices */
+  }
+
+  .loader-container {
+    padding: 2rem !important; /* reduce padding on small screens */
+  }
+
+  .loader-container-pop-cart {
+    width: 90%; /* fluid width on mobile */
+    padding: 2rem 1rem; /* adjust padding */
+  }
+
+  .loader-container-animation {
+    width: 4rem;
+    padding: 0.5rem 1rem;
+  }
+
+  .loader-loading-text::before {
+    font-size: 2rem;
+  }
+
+  .loader-container div button {
+    font-size: 1.5rem;
+    padding: 0.75rem;
   }
 }

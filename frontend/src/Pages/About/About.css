@@ -2,6 +2,10 @@
   margin-top: 12rem;
   margin-bottom: 10rem;
   padding-bottom: 8rem;
+  display: flex;
+  justify-content: center; /* center horizontally */
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
 .about-section-box {
@@ -11,50 +15,95 @@
   display: flex;
   flex-direction: column;
   text-align: center;
-  padding: 1rem;
+  padding: 2rem; /* a bit more padding for better spacing */
   margin-top: 4rem;
   border-radius: 0.5rem;
-  box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px;
+  box-shadow: rgba(17, 17, 26, 0.1) 0 1px 0;
+  transition: box-shadow 0.3s ease;
+}
+
+.about-section-box:hover {
+  box-shadow: rgba(17, 17, 26, 0.15) 0 4px 8px; /* subtle shadow on hover */
 }
 
 .about-section-box > div > div > h1 {
   font-size: 3rem;
   font-weight: 500;
   color: var(--black);
+  margin-bottom: 1rem;
 }
 
 .about-section-box > div > div > p {
   color: var(--light-color);
   font-size: 1.6rem;
+  line-height: 1.5;
+  margin-bottom: 2rem;
 }
 
 .about-section-box > div > div > button {
   margin: 1rem 0;
-  padding: 1rem;
+  padding: 1rem 2rem;
   background-color: tomato;
   color: #fff;
   border-radius: 0.5rem;
   cursor: pointer;
-  transition: all 0.5s ease-in-out;
+  transition: background-color 0.5s ease-in-out, box-shadow 0.3s ease;
   font-size: 1.7rem !important;
-  box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px;
+  border: none;
+  box-shadow: rgba(17, 17, 26, 0.1) 0 1px 0;
 }
 
 .about-section-box > div > div > button:hover {
   background-color: var(--bs-success);
   color: #fff;
+  box-shadow: 0 4px 12px rgba(0, 128, 0, 0.4);
 }
 
-/* Media Queries */
+/* Responsive adjustments */
+
 @media (max-width: 991px) {
+  .about-section-box {
+    width: 35rem;
+  }
+
+  .about-section-box > div > div > h1 {
+    font-size: 2.5rem;
+  }
+
+  .about-section-box > div > div > p {
+    font-size: 1.4rem;
+  }
+
+  .about-section-box > div > div > button {
+    font-size: 1.5rem !important;
+    padding: 0.9rem 1.8rem;
+  }
 }
 
 @media (max-width: 768px) {
+  .about-section-box {
+    width: 90%;
+    margin-top: 3rem;
+  }
 }
 
 @media (max-width: 450px) {
   .about-section-box {
-    background-color: white;
     width: 90%;
+    padding: 1.5rem 1rem;
+    margin-top: 2rem;
+  }
+
+  .about-section-box > div > div > h1 {
+    font-size: 2rem;
+  }
+
+  .about-section-box > div > div > p {
+    font-size: 1.2rem;
+  }
+
+  .about-section-box > div > div > button {
+    font-size: 1.3rem !important;
+    padding: 0.75rem 1.5rem;
   }
 }

@@ -7,7 +7,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 2rem 9%;
-  background-color: white;
+  background-color: var(--bg-darker); /* changed from white */
   z-index: 1000;
   box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px;
 }
@@ -15,20 +15,22 @@
 .header .logo {
   font-size: 2.3rem;
   font-weight: bolder;
-  color: var(--light-color);
+  color: var(--light-color); /* keeps light color like footer */
 }
 
 .header .logo svg {
-  color: var(--green);
+  color: var(--green); /* same as footer icons */
 }
+
 .header .navbar-section a {
   font-size: 2rem;
   margin: 0 1rem;
-  color: var(--black);
+  color: var(--black); /* same as footer text */
+  transition: color 0.3s ease;
 }
 
 .header .navbar-section a:hover {
-  color: var(--green);
+  color: var(--green); /* same green hover as footer */
 }
 
 .header .navbar-section.active {
@@ -44,7 +46,7 @@
   width: 4.5rem;
   line-height: 4.9rem;
   border-radius: 0.5rem;
-  background-color: #eee;
+  background-color: var(--bg-dark); /* footer-like background */
   color: var(--black);
   font-size: 2.2rem;
   margin-right: 0.3rem;
@@ -54,8 +56,8 @@
 
 .header .navbar-icons div:hover {
   cursor: pointer;
-  background-color: var(--bs-success);
-  color: white;
+  background-color: var(--green); /* same green as footer hover */
+  color: #121212; /* footer hover text color */
 }
 
 #menu-btn {
@@ -68,25 +70,28 @@
   right: -110%;
   width: 50rem;
   height: 5.5rem;
-  background-color: white !important;
+  background-color: var(--bg-darker) !important; /* footer-like background */
   border-radius: 0.5rem;
   overflow: hidden;
   display: flex;
   align-items: center;
   box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px;
 }
+
 .header .search-form.active {
   right: 2rem;
 }
+
 .header .search-form input {
   height: 100%;
   width: 100%;
-  background-color: #fff !important;
+  background-color: var(--bg-darker) !important;
   text-transform: none;
   font-size: 1.8rem;
-  color: var(--black);
+  color: var(--light-color); /* lighter text */
   padding: 0 1.5rem;
 }
+
 .header .search-form button {
   font-size: 2.5rem;
   padding-right: 1.5rem;
@@ -108,9 +113,10 @@
   border-radius: 0.5rem;
   box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px;
   width: 35rem;
-  background-color: white;
+  background-color: var(--bg-darker);
   overflow: auto !important;
 }
+
 #cart-btn button {
   color: tomato;
   font-size: 1.4rem;
@@ -134,16 +140,8 @@
   top: 1rem;
   display: flex;
   justify-content: center;
-  place-items: center;
+  align-items: center;
   margin-left: 3rem;
-  /* 
-  left: 122.9rem;
-  top: 1rem;
- 
-  text-align: center;
-  font-weight: bold;
-  color: white;
-  z-index: 100 !important; */
   box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px;
 }
 
@@ -152,12 +150,14 @@
   font-size: 1.6rem;
   color: #fff;
 }
+
 .header .shopping-cart.active {
   right: 2rem;
   transition: all 0.5s linear;
   overflow: auto !important;
   max-height: 60rem;
 }
+
 .header .shopping-cart .box {
   display: flex;
   align-items: center;
@@ -208,24 +208,28 @@
   color: var(--black);
   font-weight: bold;
 }
+
 .header .shopping-cart .total .amount {
   color: var(--green);
 }
+
 .user-profile {
   position: absolute;
   top: 110%;
   right: -110%;
-  background-color: white;
+  background-color: var(--bg-darker);
   padding: 2rem;
   text-align: left;
   font-size: 2rem;
   width: 31rem;
+  color: var(--light-color);
 }
 
 .user-profile ul li {
   list-style: none;
-  color: var(--black);
+  color: var(--light-color);
   margin-top: 2rem;
+  transition: color 0.3s ease;
 }
 
 .user-profile ul li:hover {
@@ -248,19 +252,16 @@
   right: 0.5rem;
 }
 
-
 .glow-on-hover {
   padding: 5px;
   border: none;
   outline: none;
   cursor: pointer;
   position: relative;
-  /* background-color: black; */
   color: white !important;
   text-shadow: black;
   z-index: 0;
   border-radius: 10px;
-
 }
 
 .glow-on-hover:before {
@@ -275,11 +276,9 @@
   width: calc(100% + 4px);
   height: calc(100% + 4px);
   animation: glowing 20s linear infinite;
-  opacity: 1; /* Keep the glow always visible */
+  opacity: 1;
   border-radius: 10px;
 }
-
-
 
 @keyframes glowing {
   0% { background-position: 0 0; }
@@ -287,8 +286,8 @@
   100% { background-position: 0 0; }
 }
 
+/* Media Queries stay same, only color changes inside */
 
-/* Media Queries */
 @media (max-width: 991px) {
   html {
     font-size: 50%;
@@ -312,13 +311,17 @@
     width: 42rem;
     box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px;
     border-radius: 0.5rem;
-    background-color: #fff;
+    background-color: var(--bg-darker);
     text-align: center;
   }
   .header .navbar-section a {
     font-size: 2rem;
     margin: 2rem 2.5rem;
     display: block;
+    color: var(--light-color);
+  }
+  .header .navbar-section a:hover {
+    color: var(--green);
   }
 }
 

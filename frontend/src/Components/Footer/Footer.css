@@ -1,5 +1,5 @@
 .footer {
-  background-color: #fff;
+  background-color: var(--bg-darker);
 }
 
 .footer .box-container {
@@ -55,23 +55,24 @@
   font-size: 2rem;
   color: var(--black);
   margin-left: 0.2rem;
-  background-color: #eee;
+  background-color: var(--bg-dark);
   text-align: center;
 }
 
 .footer .box-container .box .share a:hover {
   background-color: var(--green);
-  color: #fff;
+  color: #121212;
 }
 
 .footer .box-container .box .whats-message {
   padding: 1rem;
   border-radius: 0.5rem;
-  background: #eee;
+  background: var(--bg-dark);
   font-size: 1.6rem;
   text-transform: none;
-  color: var(---black);
+  color: var(--black);
 }
+
 .footer .box-container .box .sendMsgBtn {
   background-color: red;
   padding: 1rem;
@@ -82,7 +83,9 @@
 
 .footer .box-container .box .sendMsgBtn:hover {
   background-color: var(--green);
+  color: #121212;
 }
+
 .footer .box-container .box .payment-img {
   margin-top: 2rem;
   height: 6rem;
@@ -94,7 +97,7 @@
   margin-top: 2rem;
   padding: 1rem;
   font-size: 2rem;
-  color: var(--black);
+  color: var(--light-color);
   border-top: 2px solid var(--light-color);
 }
 

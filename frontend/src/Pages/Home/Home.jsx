@@ -1,4 +1,4 @@
-import React from "react";
+                      import React from "react";
 import "./Home.css";
 import Header from "../../Components/Header/Header";
 import freshFruits from "../../Assets/Images/freshFruits.png";

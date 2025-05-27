@@ -3,25 +3,18 @@
   --handshake: hsl(40, 100%, 66%);
   --btn2: hsl(242, 43%, 65%);
   --btn3: hsl(160, 86%, 63%);
+  --bg-dark: #121212;
+  --text-light: #f0f0f0;
+  --accent: #ff9800;
 }
 
-/* .github-button > .main-box {
-  height: 100vh;
-  display: flex;
-  margin: auto;
-} */
+/* Apply dark background globally */
+body {
+  background-color: var(--bg-dark);
+  color: var(--text-light);
+}
 
-/* .github-button > .button-box {
-  height: 500px;
-  max-width: 500px;
-  align-items: center;
-  justify-content: center;
-  margin: auto;
-  display: grid;
-} */
-
-/* Button 1 */
-
+/* Button 1 - Github Button */
 .github-button {
   position: absolute;
   top: 90vh;
@@ -37,25 +30,9 @@
   transition: 0.5s;
   font-size: 2rem;
 
-  /* background-image: linear-gradient(
-    to right,
-    #6bd1a8,
-    #70d4a1,
-    #75d799,
-    #7ada91,
-    #7fdd8a,
-    #83e083,
-    #88e37c,
-    #8de675,
-    #92e96e,
-    #97ec67,
-    #9cf060,
-    #a1f359
-  ); */
-
   background-image: linear-gradient(
     to right,
-    #ff9800,
+    var(--accent),
     #ff9c2a,
     #ffa033,
     #ffa43d,
@@ -69,9 +46,8 @@
     #ffc48d
   );
 
-  color: white;
-  animation: blur 2s;
-  animation-iteration-count: infinite;
+  color: var(--text-light);
+  animation: blur 2s infinite;
   outline: none;
   cursor: pointer;
   border: none;
@@ -85,8 +61,7 @@
 }
 
 @keyframes blur {
-  0%,
-  100% {
+  0%, 100% {
     box-shadow: 0 0 10px var(--handshake);
   }
 
@@ -106,10 +81,9 @@
 
 .title {
   font-weight: bold;
-  /* margin-top: 1.6rem; */
-  /* margin-left: 10rem; */
   transition: 0.5s;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  color: var(--text-light);
 }
 
 .button:hover .title {
@@ -124,15 +98,11 @@
 
 .description {
   position: absolute;
-  /* margin-top: 1.6rem; */
   font-weight: bold;
-  /* line-height: 2rem; */
-  /* font-size: 1rem; */
-  /* font-style: italic; */
   transition: 0.5s;
   opacity: 0%;
-  /* margin-left: 6rem; */
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  color: var(--text-light);
 }
 
 .button:hover .description {
