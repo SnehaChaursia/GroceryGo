@@ -11,7 +11,9 @@ GroceryGo is a [describe your project: e.g., simple and efficient grocery list m
 
 ## Screenshots
 
-![Demo Screenshot]
+![Screenshot from 2025-05-28 04-40-57](https://github.com/user-attachments/assets/0b5ff281-38ba-4505-8550-2901f8a895ec)
+
+![Screenshot from 2025-05-28 04-41-24](https://github.com/user-attachments/assets/48e4dd2e-e62b-4ea9-8431-1cbb9f77a2d0)
 
 
 ## Installation
