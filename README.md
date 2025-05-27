@@ -1,4 +1,4 @@
-# GroceryGo# GroceryGo
+# GroceryGo
 
 GroceryGo is a [describe your project: e.g., simple and efficient grocery list management app] built to help users organize and streamline their grocery shopping experience.
 
